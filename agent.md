@@ -10,6 +10,7 @@
 | **Remediation Engine** | Backend Developer | Patch Agent |
 | **Pentest Logic** | QA/Security Lead | Pentest Agent |
 | **Frontend/Teaser** | UI/UX Designer | Frontend Agent |
+| **Code Quality & QA** | QA Engineer | QA Workflow (cross-cutting) |
 
 ---
 
@@ -39,6 +40,7 @@ Each team member/agent must maintain a persistent progress file in the `Aegisfix
 - `progres_patch.md`
 - `progres_validation.md`
 - `progres_frontend.md`
+- `progres_qa.md`
 
 ### Entry Format:
 ```markdown
@@ -54,4 +56,4 @@ Each team member/agent must maintain a persistent progress file in the `Aegisfix
 ```
 
 ---
-*Last Updated: 2026-05-15 10:15 (Aegis Planning Agent)*
+*Last Updated: 2026-05-15 10:27 (QA Engineer — added QA role & workflow)*
