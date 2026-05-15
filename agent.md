@@ -1,36 +1,38 @@
-# 👥 Aegis Agent Coordination & Standards
+# Aegis: Agent Workflow & Collaboration Standards
 
-This document outlines the responsibilities and collaboration rules for the Aegis development team and autonomous agents.
+## 1. Team & Module Ownership
 
-## 📋 Agent Responsibilities & Assignments
-
-| Agent/Module | Owner | Core Responsibility |
+| Module | Primary Owner | Agent Equivalent |
 | :--- | :--- | :--- |
-| **Recon Agent** | @agent_recon | Project mapping & stack detection logic. |
-| **Security Agent** | @agent_security | SAST engine and vulnerability pattern matching. |
-| **Pentest Agent** | @agent_pentest | DAST orchestration and sandbox exploitation. |
-| **Patch Agent** | @agent_patch | AI surgical patching and code transformation. |
-| **Validation Agent** | @agent_validation | Patch verification and regression testing. |
-| **Frontend/Teaser** | @agent_frontend | Landing page, dashboard, and visual UI. |
+| **Orchestration Core** | Lead Architect | Orchestrator Agent |
+| **Project Ingestion** | DevOps Engineer | Recon Agent |
+| **Security Scanning** | Security Engineer | Security Agent |
+| **Remediation Engine** | Backend Developer | Patch Agent |
+| **Pentest Logic** | QA/Security Lead | Pentest Agent |
+| **Frontend/Teaser** | UI/UX Designer | Frontend Agent |
 
-## 🤝 Collaboration Rules
-- **Modular Ownership:** No agent should modify the core logic of another agent's module without a peer review.
-- **Shared Context:** All data shared between agents must follow the `AegisContext` schema defined in OpenClaw.
+---
+
+## 2. Collaboration Rules
+- **Modular Development:** Each agent/module must be developed in its respective directory under `core/` or `agents/`.
 - **Git Workflow:**
-  - Main branch is for production-ready code only.
-  - Feature branches: `feat/<agent-name>/<task>`.
-  - Fix branches: `fix/<issue-id>`.
+  - **Branching:** `feature/agent-name` for new developments.
+  - **Commits:** Clear, descriptive messages (e.g., `feat(patch): add parameterized query support`).
+- **Orchestration:** All agents must communicate through the OpenClaw standard output/JSON format to ensure seamless handovers.
 
-## 🛠️ Coding Standards
-- **CLI-First:** Every feature must be accessible via the terminal.
-- **Aesthetics:** Use the established color palette (Red, Cyan, Gray) for all console outputs.
-- **Resilience:** Every agent must handle network failures and AI timeouts gracefully (Retry logic).
-- **Security:** Do not log sensitive data (API keys, etc.) in plain text; use masking.
+---
 
-## 📈 Progress Tracking
-Every developer/agent MUST maintain their own progress file in the `Aegisfix` folder. These files are **APPEND-ONLY**.
+## 3. Coding Standards
+- **CLI-First:** Every feature must be accessible via terminal command.
+- **Cinematic UX:** Use consistent coloring and logging patterns across all agents.
+- **Security-Native:** All internal communication must be sanitized; no sensitive data in logs.
 
-### Progress Files:
+---
+
+## 4. Progress Tracking (Persistent Logs)
+Each team member/agent must maintain a persistent progress file in the `Aegisfix` folder. These files **MUST ALWAYS APPEND** new entries and **NEVER** overwrite previous history.
+
+### Required Progress Files:
 - `progres_recon.md`
 - `progres_security.md`
 - `progres_pentest.md`
@@ -40,9 +42,16 @@ Every developer/agent MUST maintain their own progress file in the `Aegisfix` fo
 
 ### Entry Format:
 ```markdown
-### [YYYY-MM-DD HH:MM] - Task Name
-- **Task Completed:** Description of what was done.
-- **Files Changed:** list of files.
-- **Summary:** Quick technical summary.
-- **Next Task:** What is planned next.
+## [TIMESTAMP]
+- **Tasks Completed:**
+  - Task 1
+  - Task 2
+- **Files Changed:**
+  - path/to/file.py
+- **Summary:** Quick summary of progress.
+- **Blockers:** Any issues encountered.
+- **Next Tasks:** What's planned next.
 ```
+
+---
+*Last Updated: 2026-05-15 10:15 (Aegis Planning Agent)*

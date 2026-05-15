@@ -1,62 +1,65 @@
-# 🚀 Aegis Feature Specification
+# Aegis: Feature Specification & Demo Concepts
 
-Aegis is defined by its ability to perform autonomous security remediation with a cinematic developer experience.
+## 1. Core Modules & Features
 
-## 🤖 AI Agent Ecosystem
+### 🛡️ Aegis Testing
+- **Real-time scanning:** Live detection of insecure code patterns.
+- **Self-healing:** Automatic generation and application of secure patches.
+- **Regression Testing:** Ensuring security fixes don't break existing logic.
 
-### 1. Recon Agent
-- **Responsibility:** Maps project architecture and tech stack.
-- **Behavior:** Detects entry points, environment files, and dependency versions.
+### 🔍 Aegis Security
+- **Attack Surface Analysis:** Mapping all entry points and exposed routes.
+- **OWASP Detection:** Targeted scanning for Top 10 vulnerabilities.
+- **Dependency Risk:** Analyzing `package.json` or `requirements.txt` for known CVEs.
 
-### 2. Security Agent (SAST)
-- **Responsibility:** Static analysis for vulnerabilities.
-- **Behavior:** Identifies hardcoded secrets, SQLi, XSS, and insecure configurations.
+### 🧪 Aegis Local Pen Test
+- **Exploit Simulation:** Running safe, local payloads to verify vulnerabilities.
+- **Autonomous Workflows:** Chained attacks to test lateral movement possibilities.
 
-### 3. Pentest Agent (DAST)
-- **Responsibility:** Validates vulnerabilities in a runtime sandbox.
-- **Behavior:** Attempts basic exploits to prove that findings are not false positives.
+### 🏗️ Aegis Development
+- **Secure Boilerplate:** Initializing projects with pre-configured security headers and middlewares.
+- **DevSecOps Scaffolding:** Automated creation of GitHub Actions or K8s security policies.
 
-### 4. Patch Agent (Healing)
-- **Responsibility:** Applies surgical code fixes.
-- **Behavior:** Uses AI to rewrite code securely while maintaining original logic/formatting.
-
-### 5. Validation Agent
-- **Responsibility:** Regression testing.
-- **Behavior:** Ensures the patch fixed the issue and didn't break functionality.
-
-### 6. Report Agent
-- **Responsibility:** Generates human-readable security logs.
-- **Behavior:** Summarizes the entire autonomous workflow into Markdown reports.
-
-### 7. Ask Agent
-- **Responsibility:** Interactive security consultant.
-- **Behavior:** Answers developer questions via `aegis ask "how do I secure this endpoint?"`.
+### 💬 Aegis Ask
+- **Contextual Reasoning:** Answering security questions based on the specific project codebase.
+- **Architecture Guidance:** Providing advice on secure design patterns.
 
 ---
 
-## 💻 CLI Interface & Commands
+## 2. Agent Intelligence Layer
 
-| Command | Action |
+| Agent | Responsibility |
 | :--- | :--- |
-| `aegis autopilot .` | **Autonomous Mode:** Runs the full pipeline from Recon to Report. |
-| `aegis scan .` | Runs SAST analysis only. |
-| `aegis pentest <url>` | Runs DAST analysis against a running endpoint. |
-| `aegis fix <issue_id>` | Manually triggers a patch for a specific identified issue. |
-| `aegis ask "<prompt>"` | Chat with the security intelligence layer. |
-| `aegis doc` | Opens the web-based documentation and dashboard. |
+| **Recon Agent** | Maps project structure, tech stack, and entry points. |
+| **Security Agent** | Performs SAST/DAST analysis and vulnerability identification. |
+| **Pentest Agent** | Validates findings through simulated attack payloads. |
+| **Patch Agent** | Generates and applies secure code transformations. |
+| **Validation Agent** | Verifies the effectiveness of applied patches. |
+| **Report Agent** | Compiles all findings into executive and technical reports. |
+| **Ask Agent** | Provides the conversational interface for security queries. |
 
 ---
 
-## 🎨 Cinematic & Visual Experience
-- **Live Orchestration Logs:** Visual tree view of agents talking to each other.
-- **Before/After Diff:** High-contrast terminal diffs showing the surgical patch.
-- **Threat Score Radar:** A real-time updating score that improves as patches are applied.
-- **Typewriter HUD:** Important status updates displayed with a terminal "hacker" aesthetic.
+## 3. CLI Experience & Commands
+
+### Standard Commands
+- `aegis scan .` : Standard SAST scan.
+- `aegis pentest localhost:3000` : Launch local pentest against a target.
+- `aegis ask "How do I secure my login route?"` : Context-aware assistant.
+
+### 🚀 Autopilot Mode
+`aegis autopilot .`
+*Triggers the cinematic orchestration flow:*
+1. **[RECON]** Analyzing project stack... (Found Next.js, PostgreSQL)
+2. **[SECURITY]** Scanning for vulnerabilities... (Found 2 SQLi, 1 Hardcoded Key)
+3. **[PENTEST]** Simulating SQL injection on `/api/user`... (Exploit Success)
+4. **[PATCH]** Generating surgical patches... (Applying parameterized queries)
+5. **[VALIDATION]** Re-scanning patched routes... (Security Score: 10/10)
+6. **[REPORT]** Generating AEGIS_REPORT.md...
 
 ---
 
-## 🌐 Teaser Landing Page Ideas
-- **Interactive Terminal:** A mini-terminal on the website where users can type `aegis scan` to see a demo.
-- **Security Scoreboard:** Showcase projects that have been "Healed by Aegis".
-- **Dynamic Background:** Dark mode with glowing neon red/cyan accents.
-- **"AI Security OS" Branding:** Position Aegis as the OS for secure development.
+## 4. Cinematic Demo Concepts
+- **Real-time Orchestration Logs:** Using distinct colors and typewriter effects for each agent.
+- **Security Score Improvement:** A live dashboard or terminal widget showing the score rising from "Critical" to "Secure" as patches are applied.
+- **Autonomous Collaboration:** Agents "talking" to each other in the logs (e.g., `SECURITY -> PATCH: Found vulnerability in auth.ts:L45`).
