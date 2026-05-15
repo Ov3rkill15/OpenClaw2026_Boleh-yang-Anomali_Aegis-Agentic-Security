@@ -23,6 +23,7 @@ If you are an AI assistant working on this project, you **MUST** adhere to the f
 - [**Learn.md**](./learn.md) - Initial analysis of the legacy Aegisv2 codebase (CLI & Teaser).
 
 ### 📈 Module Progress Logs (Append-Only)
+- [**General Progress**](./progres_general.md) - Project structure and cross-module updates.
 - [**Recon Progress**](./progres_recon.md) - Project mapping & metadata ingestion.
 - [**Security Progress**](./progres_security.md) - SAST/DAST analysis and vulnerability detection.
 - [**Pentest Progress**](./progres_pentest.md) - Exploit simulation and attack validation.
